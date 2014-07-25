@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "bhh",
+  "name": "Better Horse Hud",
+  "description": "improves the default horse hud in Minecraft whilst still maintaining a 'default' feel",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Falling_Dutchman"],
+  "credits": "Falling_Dutchman, for making this mod",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
