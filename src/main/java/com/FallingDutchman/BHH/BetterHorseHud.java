@@ -9,14 +9,22 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.client.GuiIngameForge;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class BetterHorseHud
 {
     @Mod.Instance
     public static BetterHorseHud instance;
+
+    @Mod.EventHandler
+    public void PreInit(FMLPreInitializationEvent event)
+    {
+        MinecraftForge.EVENT_BUS.register(new ModGui(Minecraft.getMinecraft()));
+    }
 
     @Mod.EventHandler
     public void Init(FMLInitializationEvent event)
@@ -29,7 +37,6 @@ public class BetterHorseHud
     public void PostInit(FMLPostInitializationEvent event)
     {
         LogHelper.info("post init");
-        MinecraftForge.EVENT_BUS.register(new ModGui(Minecraft.getMinecraft()));
     }
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
