@@ -2,13 +2,13 @@
 {
   "modid": "bhh",
   "name": "Better Horse Hud",
-  "description": "improves the default horse hud in Minecraft whilst still maintaining a 'default' feel",
+  "description": "improves the default horse hud in Minecraft whilst still maintaining a 'Vanilla' feel",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["Falling_Dutchman"],
-  "credits": "Falling_Dutchman, for making this mod",
+  "credits": "The guys over at MCP and forge for creating the tools used to make this mod and Mojang for creating Minecraft",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
