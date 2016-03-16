@@ -1,29 +1,37 @@
+// For those who want the bleeding edge
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
     }
 }
+apply plugin: 'net.minecraftforge.gradle.forge'
 
-apply plugin: 'forge'
-
-version = "1.8"
+version = "1.0"
 group= "com.FallingDutchman.BHH" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BetterHorseHud"
 
 minecraft {
-    version = "1.8-11.14.0.1289-1.8"
-    assetDir = "eclipse/assets"
+    version = "1.8.9-11.15.1.1722"
+    runDir = "run"
+    mappings = "stable_22"
+}
+
+jar {
+    manifest {
+        attributes 'ModSide':'CLIENT'
+    }
+    appendix "$minecraft.version"
+}
+
+sourceJar {
+    appendix "$minecraft.version"
 }
 
 dependencies {}
