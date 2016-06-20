@@ -8,22 +8,22 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "1.0"
-group= "com.FallingDutchman.BHH" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "com.FallingDutchman.BHH"
 archivesBaseName = "BetterHorseHud"
 
 minecraft {
-    version = "1.9-12.16.1.1887"
+    version = "1.9.4-12.17.0.1908-1.9.4"
     runDir = "run"
-    mappings = "stable_24"
+    mappings = "snapshot_20160601"
 
     replaceIn "References/Reference.java"
-    replace '${mcversion}', "[1.9]"
+    replace '${mcversion}', "[1.9,1.9.4]"
     replace '${modversion}', project.version
 }
 
