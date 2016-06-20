@@ -2,11 +2,9 @@ package com.FallingDutchman.BHH.Client.Gui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.entity.passive.EntityHorse;
 import net.minecraftforge.client.GuiIngameForge;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.lwjgl.input.Keyboard;
 
@@ -23,24 +21,25 @@ public class ModGui extends Gui
         this.mc = mc;
     }
 
-    @SubscribeEvent(priority = EventPriority.NORMAL)
+    @SubscribeEvent()
     public void onRenderMountHealth(RenderGameOverlayEvent event)
     {
-        if (event.type == ElementType.EXPERIENCE || event.type == ElementType.FOOD || event.type == ElementType.JUMPBAR )
+        if (event.getType() == ElementType.EXPERIENCE || event.getType() == ElementType.FOOD
+                || event.getType() == ElementType.JUMPBAR )
         {
             YesOrNo = true;
         }
 
         if (!event.isCancelable() || !YesOrNo)return;
 
-        if(this.mc.thePlayer.ridingEntity != null)
+        if(this.mc.thePlayer.isRiding())
         {
             GuiIngameForge.renderFood = true;
         }
 
         if(GuiIngameForge.renderExperiance)
         {
-            if(this.mc.thePlayer.ridingEntity instanceof EntityHorse)
+            if(this.mc.thePlayer.isRidingHorse())
             {
                 GuiIngameForge.renderJumpBar = Keyboard.isKeyDown(Keyboard.KEY_SPACE);
             }

@@ -18,9 +18,13 @@ group= "com.FallingDutchman.BHH" // http://maven.apache.org/guides/mini/guide-na
 archivesBaseName = "BetterHorseHud"
 
 minecraft {
-    version = "1.8.9-11.15.1.1722"
+    version = "1.9-12.16.1.1887"
     runDir = "run"
-    mappings = "stable_22"
+    mappings = "stable_24"
+
+    replaceIn "References/Reference.java"
+    replace '${mcversion}', "[1.9]"
+    replace '${modversion}', project.version
 }
 
 jar {
